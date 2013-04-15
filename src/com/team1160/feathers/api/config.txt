@@ -1,0 +1,6 @@
+#   Team 1160 Config file for feathers mcgraw     #
+# pound signs are comments, v starts a variable   #
+# s shows which system it belongs to. There are   #
+# four systems left right middle and general each #
+
+v max_angle s top 

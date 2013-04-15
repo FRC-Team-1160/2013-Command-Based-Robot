@@ -24,8 +24,8 @@
     -->
 
     <property name="user.properties.file" value="build.properties"/>
-    <property file="${user.home}/.sunspotfrc.properties"/>
-    <import file="${sunspot.home}/build.xml"/>
+    <property file="~/.sunspotfrc.properties"/>
+    <import file="~/sunspotfrcsdk/build.xml"/>
 
     <!--
 
