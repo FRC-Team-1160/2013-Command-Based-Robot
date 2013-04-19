@@ -10,16 +10,15 @@ import edu.wpi.first.wpilibj.Gyro;
  * interface is one place for all objects to 
  * get sensor data.
  */
-
 public class SI {
 
-	public static boolean middleFinish;
+    public static boolean middleFinish;
     protected LengthSensor mid;
     protected LengthSensor left;
     protected LengthSensor right;
     protected static Gyro gyro;
     protected static SI instance;
-	public static boolean nextCommand;
+    public static boolean nextCommand;
 
     public static SI getInstance() {
         if (instance == null) {
@@ -34,7 +33,7 @@ public class SI {
         right = new LengthSensor(Constants.RIGHT_POT, 0, 15.15, 3.25);
 
         gyro = new Gyro(Constants.GYRO);
-    
+
         middleFinish = false;
     }
 
@@ -49,8 +48,7 @@ public class SI {
     public LengthSensor getRight() {
         return this.right;
     }
-    
-    
+
     public double getMidl() {
         return this.mid.getLength();
     }
@@ -62,9 +60,8 @@ public class SI {
     public double getRightl() {
         return this.right.getLength();
     }
-    
-   // Returns the angle of the frame in radians, because thats what we need them in most the time
-    
+
+    // Returns the angle of the frame in radians, because thats what we need them in most the time
     public double getAngle() {
         return Math.toRadians(gyro.getAngle());
     }

@@ -19,10 +19,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *------------------------------------------------------------------------*	 
  */
 
-
 public abstract class Pulley extends Subsystem {
 
-	protected DigitalServo angle;
+    protected DigitalServo angle;
     protected Jaguar am;
     protected Joystick stick;
     protected LengthSensor lengthSensor;
@@ -48,12 +47,19 @@ public abstract class Pulley extends Subsystem {
         this.lastSet = set;
     }
 
+    public void setFourtyFive() {
+        setRodAngleFree(45);
+    }
+
     public void setVelocity(double set) {
         if ((lengthSensor.getLength() >= tapeLenMax || l.getLockState()) && set > 0) {
+            System.out.println("Too long, or trying to extend while locked.");
             this.am.set(0);
         } else if (lengthSensor.getLength() <= tapeLenMin && set < 0) {
+            System.out.println("Too short. Currently " + lengthSensor.getLength());
             this.am.set(0);
         } else {
+            System.out.println("Functional");
             this.am.set(set * direction);
         }
     }
@@ -144,19 +150,19 @@ public abstract class Pulley extends Subsystem {
     }
 
     public boolean isAt(double length, double error) {
-    	length = Math.min(Math.max(length, tapeLenMin), tapeLenMax);
-    	return Math.abs(length - lengthSensor.getLength()) <= error;
+        length = Math.min(Math.max(length, tapeLenMin), tapeLenMax);
+        return Math.abs(length - lengthSensor.getLength()) <= error;
     }
 
     public double getLength() {
         return this.lengthSensor.getLength();
     }
-    
-    public double getRaw(){
-    	return this.lengthSensor.getRaw();
+
+    public double getRaw() {
+        return this.lengthSensor.getRaw();
     }
-    
-    public void setRelativeGround(double dAngle){
+
+    public void setRelativeGround(double dAngle) {
         double anglex = dAngle - SI.getInstance().getAngleDegrees();
         setRodAngleFree(anglex);
     }

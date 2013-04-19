@@ -189,6 +189,7 @@ public class FrameMath{
                 b = -2 * (k2 + k4 * k5 + k3 * k5);
                 c = MathUtils.pow(k2, 2) + MathUtils.pow(k3, 2) + MathUtils.pow(k4, 2) + 2 * (k3 * k4) - MathUtils.pow(tapeLength, 2);
                 x2 = (-b - Math.sqrt(((b * b) - (4 * a * c)))) / (2 * a);
+                m2  = MathUtils.atan((k2-x2)/ (k3 + k4 - k5 * x2));
             }
             dTapeAngle = Math.toDegrees(m2) - dFrAng;
             SmartDashboard.putNumber(name + " dTapeAngle: ", dTapeAngle);

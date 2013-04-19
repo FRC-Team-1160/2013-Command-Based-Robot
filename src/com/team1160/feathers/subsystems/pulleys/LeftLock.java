@@ -1,9 +1,9 @@
 package com.team1160.feathers.subsystems.pulleys;
 
 import com.team1160.feathers.api.Constants;
-import com.team1160.feathers.commands.lock.LockCommand;
 
 import edu.wpi.first.wpilibj.Servo;
+import com.team1160.feathers.commands.lock.LockCommand;
 
 public class LeftLock extends Lock {
 

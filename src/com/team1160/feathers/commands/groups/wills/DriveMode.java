@@ -8,15 +8,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class DriveMode extends CommandGroup {
     
-    MiddlePulley mpulley;
     
     public DriveMode() {
         
-        if(mpulley == null){
-            mpulley.getInstance();
-        }
-        
         addParallel(new ManualDrive());
-        addParallel(new Nothing(mpulley));
+        addParallel(new Nothing(MiddlePulley.getInstance()));
     }
 }

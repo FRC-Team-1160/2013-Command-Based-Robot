@@ -33,7 +33,8 @@ public class LeftPulley extends Pulley{
 		tapeLenMax = 34.5;
 		tapeLenMin = 5;
 		angleMax = 1;
-		angleMin = .43;
+		//angleMin = .43;
+                angleMin = 0;
 		pulleyErrorMax = 1;
 		pulleyErrorMin = .1;		
 		meth = new FrameMath(false, .0032, .43, "left pulley");

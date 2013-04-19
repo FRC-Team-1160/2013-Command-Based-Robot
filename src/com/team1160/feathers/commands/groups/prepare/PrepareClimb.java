@@ -16,8 +16,12 @@ public class PrepareClimb extends CommandGroupBase{
         //addParallel(new UnlockPulley(leftLock, leftPulley));
         //addParallel(new UnlockPulley(rightLock, rightPulley));
         //addSequential(new WaitForChildren());
-        addParallel(new pulleyAngleLength(leftPulley , abc, 28, false));
-        addParallel(new pulleyAngleLength(rightPulley, abc, 28, false));
+//        addParallel(new pulleyAngleLength(leftPulley , abc, 28, false));
+//        addParallel(new pulleyAngleLength(rightPulley, abc, 28, false));
+        
+        addParallel(new pulleyAngleLength(leftPulley, 65, 28, false));
+        addParallel(new pulleyAngleLength(rightPulley, 75, 28, false));
+        
         //addParallel(new pulleyAngleLength(middlePulley, 80, 27, false));   
     }
 

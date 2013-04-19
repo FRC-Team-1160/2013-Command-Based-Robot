@@ -1,8 +1,10 @@
 package com.team1160.feathers;
 
 import com.team1160.feathers.api.Constants;
+import com.team1160.feathers.commands.FourtyFive;
 import com.team1160.feathers.commands.MiddleFinish;
 import com.team1160.feathers.commands.NextCommand;
+import com.team1160.feathers.commands.ResetGyro;
 import com.team1160.feathers.commands.UnlockPulley;
 import com.team1160.feathers.commands.groups.climbrungs.first.ClimbFirst;
 import com.team1160.feathers.commands.groups.climbrungs.second.ClimbSecond;
@@ -32,6 +34,7 @@ public class OI {
 
 	// Wills buttons
 	protected Button driveMode;
+        protected Button resetGyro;
 	protected Button wAngle;
 	protected Button wLength;
 	protected Button wFourtyFive;
@@ -77,6 +80,7 @@ public class OI {
 	private void initButtons() {
 		// Wills buttons
 		driveMode = new JoystickButton(driveStick, 1);
+                resetGyro = new JoystickButton(driveStick, 2);
 		wFourtyFive = new JoystickButton(driveStick, 3);
 		wAngle = new JoystickButton(driveStick, 4);
 		wLength = new JoystickButton(driveStick, 5);
@@ -108,6 +112,7 @@ public class OI {
 	private void tieButtons() {
 		//Wills buttons
 		driveMode.whenPressed(new DriveMode());
+                resetGyro.whenPressed(new ResetGyro());
 		wAngle.whenPressed(new WillAngle());
 		wLength.whenPressed(new WillLength());
 		wFourtyFive.whenPressed(new PrepareClimb());
@@ -119,6 +124,7 @@ public class OI {
 		//Right buttons
 		rAngle.whenPressed(new ManualAngle(RightPulley.getInstance()));
 		rLength.whenPressed(new ManualVelocity(RightPulley.getInstance()));
+                rFourtyFive.whenPressed(new FourtyFive(RightPulley.getInstance()));
 		rLock.whenPressed(new LockCommand(RightLock.getInstance(), true));
 		rULock.whenPressed(new UnlockPulley(RightLock.getInstance(), RightPulley.getInstance()));
 		//rAdjust.whenPressed(new RightPulleyAdjust());
@@ -126,6 +132,7 @@ public class OI {
 		//Left buttons
 		lAngle.whenPressed(new ManualAngle(LeftPulley.getInstance()));
 		lLength.whenPressed(new ManualVelocity(LeftPulley.getInstance()));
+                lFourtyFive.whenPressed(new FourtyFive(LeftPulley.getInstance()));
 		lLock.whenPressed(new LockCommand(RightLock.getInstance(), true));
 		lULock.whenPressed(new UnlockPulley(LeftLock.getInstance(), LeftPulley.getInstance()));
 		//lAdjust.whenPressed(new LeftPulleyAdjust());

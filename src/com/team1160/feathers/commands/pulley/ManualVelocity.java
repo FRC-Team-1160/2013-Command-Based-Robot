@@ -7,36 +7,32 @@ import com.team1160.feathers.subsystems.pulleys.Pulley;
  * This command is another simple command that simply
  * gives the operator direct control over the system.
  */
-
 public class ManualVelocity extends CommandBase {
 
-	private Pulley pulley;
+    private Pulley pulley;
 
-	public ManualVelocity(Pulley pulley){
-		this.pulley = pulley;
-	}
-	
-	
-	protected void initialize() {
-		// TODO Auto-generated method stub
-		
-	}
+    public ManualVelocity(Pulley pulley) {
+        this.pulley = pulley;
+        requires(pulley);
+    }
 
-	protected void execute() {
-	 this.pulley.joyVelocity();	
-	}
+    protected void initialize() {
+        // TODO Auto-generated method stub
+    }
 
-	
-	protected boolean isFinished() {
-		return false;
-	}
+    protected void execute() {
+        this.pulley.joyVelocity();
+    }
 
-	protected void end() {
-		this.pulley.setVelocity(0); // Stops the pulley from moving
-	}
+    protected boolean isFinished() {
+        return false;
+    }
 
-	protected void interrupted() {
-		this.end();
-	}
-	
+    protected void end() {
+        this.pulley.setVelocity(0); // Stops the pulley from moving
+    }
+
+    protected void interrupted() {
+        this.end();
+    }
 }

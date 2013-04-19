@@ -18,21 +18,21 @@ public class DefensiveManual extends CommandBase {
 
 	public DefensiveManual(Pulley pulley, Joystick joystick, int button){
 		this.pulley = pulley;
-		floor = joystick.getRawButton(button); //Gives the operator a choice at run with one button... maybe not
+		floor = new Boolean(joystick.getRawButton(button)); //Gives the operator a choice at run with one button... maybe not
 	}
 	
 	public DefensiveManual(Pulley pulley, boolean floor){
 		this.pulley = pulley;
-		this.floor = floor;
+		this.floor = new Boolean(floor);
 	}
 	
 	
 	protected void initialize() {
-		this.pulley.adjustAngleClimbing(floor); 
+		this.pulley.adjustAngleClimbing(floor.booleanValue()); 
 	}
 
 	protected void execute() {
-		this.pulley.adjustAngleClimbing(floor); 
+		this.pulley.adjustAngleClimbing(floor.booleanValue()); 
 		this.pulley.joyVelocity();
 	}
 	

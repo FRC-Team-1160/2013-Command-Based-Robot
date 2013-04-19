@@ -1,38 +1,32 @@
-package com.team1160.feathers.commands.pulley;
+package com.team1160.feathers.commands;
 
-import com.team1160.feathers.commands.CommandBase;
+import com.team1160.feathers.SI;
 import com.team1160.feathers.subsystems.pulleys.Pulley;
 
-public class Nothing extends CommandBase{
+public class FourtyFive extends CommandBase{
     
     Pulley pulley;
     
-    public Nothing(Pulley pulley){
+    public FourtyFive(Pulley pulley){
         this.pulley = pulley;
-        requires(pulley);
-        
     }
 
     protected void initialize() {
-        
+        SI.reset();
+        pulley.setFourtyFive();
     }
 
     protected void execute() {
-        pulley.setVelocity(0);
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
-        
     }
 
     protected void interrupted() {
-        
     }
-    
-    
-    
+
 }

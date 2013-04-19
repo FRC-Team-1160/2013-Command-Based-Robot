@@ -2,9 +2,6 @@ package com.team1160.feathers.commands.groups.climbrungs.second;
 
 import com.team1160.feathers.commands.CommandGroupBase;
 import com.team1160.feathers.commands.waitForNext;
-import com.team1160.feathers.commands.groups.climbrungs.second.CliimbTheShit;
-import com.team1160.feathers.commands.groups.climbrungs.second.PrepareMiddle;
-import com.team1160.feathers.commands.groups.climbrungs.second.PrepareRightLeft;
 
 /*
  * Another class that does what it implies,

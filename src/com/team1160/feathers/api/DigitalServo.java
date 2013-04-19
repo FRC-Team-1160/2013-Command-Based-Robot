@@ -16,7 +16,7 @@ public class DigitalServo extends Servo {
 	public DigitalServo(int slot, int channel) {
 		super(slot, channel);
 		freed = false;
-		setBounds(184,0,0,0,67);
+		setBounds(244,0,0,0,11);
 	}
 	
 	

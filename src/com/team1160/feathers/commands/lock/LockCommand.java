@@ -14,21 +14,25 @@ public class LockCommand extends CommandBase {
 	private Lock lock;
 	private Boolean status;
 
+        protected void initLockCommand(Lock lock, Boolean status){
+            this.lock = lock;
+            this.status = status;
+            requires(lock);
+        }
+        
+        
 	public LockCommand(Lock lock, Boolean status){
-		this.lock = lock;
-		this.status = status;
-	}
+            initLockCommand(lock, status);
+        }
 	
 	public LockCommand(Lock lock, boolean status){
 		Boolean newStatus = new Boolean(status);
-		this.status = newStatus;
-		this.lock = lock;
-	}
+                initLockCommand(lock, newStatus);
+        }
 	
 	public LockCommand(Lock lock){
-		this.lock = lock;
-		this.status = !this.lock.getLockState();
-	}
+            initLockCommand(lock, new Boolean(!lock.getLockState()));
+        }
 	
 	protected void initialize() {
 		// Nothing to initialize
@@ -36,13 +40,13 @@ public class LockCommand extends CommandBase {
 
 	protected void execute() {
 		if(this.status != null){
-			this.lock.lock(status);
+			this.lock.lock(status.booleanValue());
 		}
 	}
 
 	protected boolean isFinished() {
 		if(this.status == null) return false;
-		return this.lock.getLockState() == this.status;
+		return this.lock.getLockState() == this.status.booleanValue();
 	}
 
 	protected void end() {
@@ -52,5 +56,4 @@ public class LockCommand extends CommandBase {
 	protected void interrupted() {
 		this.execute();
 	}
-
 }
