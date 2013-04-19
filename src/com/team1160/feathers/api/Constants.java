@@ -7,7 +7,11 @@ public interface Constants {
 	int DT_LEFT_JAG_CAR = 2;
 	int DT_RIGHT_JAG_CHAN = 3;
 	int DT_RIGHT_JAG_CAR = 1;
-
+	int SHOOTER_JAG_CHAN = 1;
+	int SHOOTER_JAG_CAR = 10;
+	int TRIGGER_CAR =1;
+	int TRIGGER_CHAN = 9;
+	
 	//Pulley System
 	// Top Pulley
 		int P_TOP_JAG_CHAN = 1;
