@@ -16,8 +16,8 @@ public abstract class CommandBase extends Command {
 	protected static LeftLock leftLock;
 	protected static RightLock rightLock;
 	protected static Drivetrain drivetrain;
-	protected static LeftPulley leftPulley;
-	protected static RightPulley rightPulley;
+	public static LeftPulley leftPulley;
+	public static RightPulley rightPulley;
 	protected static MiddlePulley middlePulley;
 	protected static Arm arm;
 	

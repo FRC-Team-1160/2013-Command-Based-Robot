@@ -28,7 +28,7 @@ public class CommandLock extends Command {
 	}
 
 	protected void end() {
-		lock.lock(locked);
+		lock.setLock(locked);
 	}
 
 	protected void interrupted() {

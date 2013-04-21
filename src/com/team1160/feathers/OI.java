@@ -133,7 +133,7 @@ public class OI {
 		lAngle.whenPressed(new ManualAngle(LeftPulley.getInstance()));
 		lLength.whenPressed(new ManualVelocity(LeftPulley.getInstance()));
                 lFourtyFive.whenPressed(new FourtyFive(LeftPulley.getInstance()));
-		lLock.whenPressed(new LockCommand(RightLock.getInstance(), true));
+		lLock.whenPressed(new LockCommand(LeftLock.getInstance(), true));
 		lULock.whenPressed(new UnlockPulley(LeftLock.getInstance(), LeftPulley.getInstance()));
 		//lAdjust.whenPressed(new LeftPulleyAdjust());
 	}

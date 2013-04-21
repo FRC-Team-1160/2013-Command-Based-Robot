@@ -40,7 +40,7 @@ public class ClimbFirst extends CommandGroupBase {
          * floor(changes servo equations), and velocity.
          * ^ - More on this can be found in the pulley class
          */
-        addParallel(new DefensiveClimb(rightPulley, rightLock, 6, true, .75));
-        addParallel(new DefensiveClimb(leftPulley, leftLock, 6.5, true, .66));
+        addParallel(new DefensiveClimb(rightPulley, rightLock, 7.75, true, .75));
+        addParallel(new DefensiveClimb(leftPulley, leftLock, 7, true, .66));
     }
 }

@@ -18,8 +18,7 @@ public class team1160 extends IterativeRobot{
 		version = "X.1.2.2";
 		System.out.println("Ins Dev Robot Init, good deploy, if you see this and are at comp STOP this is an experimental build. Version: " + version );
 		CommandBase.init();		
-		Reporter.initReporter();
-		
+		Reporter.initReporter();	
 	}	
 	
 	public void teleopPeriodic(){

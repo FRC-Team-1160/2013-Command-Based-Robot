@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Jaguar;
 
 public class RightPulley extends Pulley {
 
-    protected static RightPulley instance;
+    private static RightPulley instance;
 
     public static RightPulley getInstance() {
         if (instance == null) {
@@ -20,7 +20,7 @@ public class RightPulley extends Pulley {
         return instance;
     }
 
-    protected RightPulley() {
+    private RightPulley() {
         name = "Right";
     	am = new Jaguar(Constants.P_RIGHT_JAG_CAR, Constants.P_RIGHT_JAG_CHAN);
         angle = new DigitalServo(Constants.P_RIGHT_SERVO_CAR, Constants.P_RIGHT_SERVO_CHAN);

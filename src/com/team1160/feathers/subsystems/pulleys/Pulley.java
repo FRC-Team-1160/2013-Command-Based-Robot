@@ -59,7 +59,6 @@ public abstract class Pulley extends Subsystem {
             System.out.println("Too short. Currently " + lengthSensor.getLength());
             this.am.set(0);
         } else {
-            System.out.println("Functional");
             this.am.set(set * direction);
         }
     }

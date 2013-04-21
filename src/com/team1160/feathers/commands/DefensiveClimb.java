@@ -30,7 +30,7 @@ public class DefensiveClimb extends CommandBase {
 	
 	protected void initialize() {
 		if(lock != null){
-			lock.lock(true);
+			lock.setLock(true);
 		}
 	}
 

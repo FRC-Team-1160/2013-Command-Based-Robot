@@ -11,11 +11,11 @@ import com.team1160.feathers.subsystems.pulleys.Lock;
 
 public class LockCommand extends CommandBase {
 
-	private Lock lock;
+	private Lock pawl;
 	private Boolean status;
 
         protected void initLockCommand(Lock lock, Boolean status){
-            this.lock = lock;
+            this.pawl = lock;
             this.status = status;
             requires(lock);
         }
@@ -40,13 +40,13 @@ public class LockCommand extends CommandBase {
 
 	protected void execute() {
 		if(this.status != null){
-			this.lock.lock(status.booleanValue());
+			this.pawl.setLock(status.booleanValue());
 		}
 	}
 
 	protected boolean isFinished() {
 		if(this.status == null) return false;
-		return this.lock.getLockState() == this.status.booleanValue();
+		return this.pawl.getLockState() == this.status.booleanValue();
 	}
 
 	protected void end() {
