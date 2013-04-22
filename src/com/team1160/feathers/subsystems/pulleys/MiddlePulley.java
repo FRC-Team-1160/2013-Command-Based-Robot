@@ -28,11 +28,13 @@ public class MiddlePulley extends Pulley {
         direction = -1;
         tapeLenMax = 50;
         tapeLenMin = 5;
-        angleMax = 0.78;
-        angleMin = 0.1;
+        angleMax = 1;
+        angleMin = 0;
         pulleyErrorMax = 1;
         pulleyErrorMin = .1;
-        meth = new FrameMath(true, -.0036,.774, "middle pulley");
+        //meth = new FrameMath(true, -.0036, .774, "middle pulley");
+        meth = new FrameMath(true, -.0025, .745, "middle pulley");
+
     }
     
     protected void initDefaultCommand() {
