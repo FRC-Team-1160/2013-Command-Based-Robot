@@ -4,6 +4,7 @@ import com.team1160.feathers.Reporter;
 import com.team1160.feathers.SI;
 import com.team1160.feathers.commands.CommandGroupBase;
 import com.team1160.feathers.commands.DefensiveClimb;
+import edu.wpi.first.wpilibj.command.WaitForChildren;
 
 /*
  * Pretty much what it sounds like
@@ -40,7 +41,10 @@ public class ClimbFirst extends CommandGroupBase {
          * floor(changes servo equations), and velocity.
          * ^ - More on this can be found in the pulley class
          */
-        addParallel(new DefensiveClimb(rightPulley, rightLock, 7.75, true, .75));
-        addParallel(new DefensiveClimb(leftPulley, leftLock, 7, true, .66));
+        addParallel(new DefensiveClimb(rightPulley, rightLock, 28, true, .25));
+        addParallel(new DefensiveClimb(leftPulley, leftLock, 28, true, .25));
+        addSequential(new WaitForChildren());
+        addParallel(new DefensiveClimb(rightPulley, rightLock, 7, true, .75));
+        addParallel(new DefensiveClimb(leftPulley, leftLock, 8.05, true, .66));
     }
 }

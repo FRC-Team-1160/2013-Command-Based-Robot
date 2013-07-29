@@ -27,16 +27,17 @@ public class RightPulley extends Pulley {
         l = RightLock.getInstance();
         lengthSensor = SI.getInstance().getRight();
         direction = -1;
-        tapeLenMax = 34.5;
+        tapeLenMax = 37.5;
         tapeLenMin = 5;
         //angleMax = 0.65;
         //angleMin = 0.24;
-        angleMax = 1;
-        angleMin = 0;
+        angleMax = .901;
+        angleMin = .103;
         pulleyErrorMax = 1;
         pulleyErrorMin = .1;
         //meth = new FrameMath(false, -.00369, .969, "right pulley");
-        meth = new FrameMath(false, -.00793, 1.427, "right pulley");
+        //meth = new FrameMath(false, -.00793, 1.427, "right pulley");
+        meth = new FrameMath(false, -.00630, 1.218, "right pulley");
     }
 
     void getJoystick() {
