@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * This class is essentially our robot, and it deserves more comments then*
  * what we have given it. Sorry about that we were a bit rushed at time of*
  * writing. I promise to come back and comment it but not now.            *
+ * Turns out I lied man sorry :( maybe zach will comment it out but at    *
+ * this point I doubt it.                                                 *
  *------------------------------------------------------------------------*	 
  */
 
